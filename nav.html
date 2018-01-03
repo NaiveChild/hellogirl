@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		body {
+		  background: url("test.jpeg") no-repeat center center fixed;
+		  -moz-background-size: cover;
+		  -o-background-size: cover;
+		  -webkit-background-size: cover;
+		  background-size: cover;
+		}
+		  
+		.rascal {
+		  position: relative;
+		  background: rgba(255, 255, 255, 0.3);
+		  overflow: hidden;
+		}
+		.rascal::after {
+		  z-index: -1;
+		  content: '';
+		  position: absolute;
+		  top: 0;
+		  bottom: 0;
+		  left: 0;
+		  right: 0;
+		  background: url("test.jpeg") no-repeat center center fixed;
+		  -moz-background-size: cover;
+		  -o-background-size: cover;
+		  -webkit-background-size: cover;
+		  background-size: cover;
+		  -webkit-filter: blur(20px);
+		  filter: blur(20px);
+		  margin: -30px;
+		}
+	</style>
+</head>
+<body>
+	<div class="rascal">
+        My Name is Uncle-Keith！
+	</div>
+</body>
+</html>

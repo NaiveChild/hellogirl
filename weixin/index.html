@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>你不是一个人在对抗这复杂的世界</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="true"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+	<meta name = "format-detection" content = "telephone=no">
+	<meta name="x5-page-mode" content="app" />
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style type="text/css">
+	
+	</style>
+</head>
+<body>
+	<div id="orientLayer" class="mod-orient-layer">
+        <div class="mod-orient-layer__content">
+            <i class="icon-wx mod-orient-layer__icon-orient"></i>
+            <div class="mod-orient-layer__desc">
+                为了更好的体验，请使用竖屏浏览
+            </div>
+        </div>
+    </div>
+
+	<video id="Bvideo" class="video" preload="auto" x-webkit-airplay="true" webkit-playsinline="true" playsinline="" x5-video-player-type="h5" x5-video-player-fullscreen="true" src="img/video.mp4"></video>
+
+	<canvas id="canvas" class=""></canvas>
+
+	<div class="last-page hide">
+		<img class="last-bg" rsrc="img/last_bg.jpg">
+		<img class="btn-jump" rsrc="img/btn_jump.png">
+		<img class="btn-share" rsrc="img/btn_share.png">
+	</div>
+	
+	<div class="white-1"></div>
+	<div class="white-2"></div>
+
+	<div class="loading-page  topindex">
+		<div class="type-1 hide">
+			<div class="loadimg-wrap"></div>
+			<div class="load-text1"></div>
+			<div class="load-text2">
+				<div class="load-text2-inner"></div>
+			</div>
+			<img class="btn-enter hide" src="img/enter.png">
+			<img class="hand-img load-hand hide" src="img/hand.png">
+		</div>
+		
+		<div class="type-2 hide">
+			<div class="loadimg-wrap"></div>
+			<div class="load-text1-1"></div>
+			<div class="load-2-text1">
+				<div class="load-2-text1-inner"></div>
+			</div>
+			<div class="load-text1-2"></div>
+			<div class="load-2-text2">
+				<div class="load-2-text2-inner"></div>
+			</div>
+			<div class="load-text1-3"></div>
+			<div class="load-2-text3">
+				<div class="load-2-text3-inner"></div>
+			</div>
+			<img class="btn-enter hide" src="img/enter.png">
+			<img class="hand-img load-hand hide" src="img/hand.png">
+		</div>
+	</div>
+	
+	<div class="Q1-page">
+		<div class="answer-wrap hot-A">
+			<img class="submit-img" rsrc="img/check1.png">
+		</div>
+		<div class="answer-wrap hot-B">
+			<img class="submit-img" rsrc="img/check1.png">
+		</div>
+		<div class="answer-wrap hot-C">
+			<img class="submit-img" rsrc="img/check1.png">
+		</div>
+		<div class="answer-wrap hot-D">
+			<img class="submit-img" rsrc="img/check1.png">
+		</div>
+	</div>
+	
+	<div class="shade-page hide">
+		<img class="shade-img" rsrc="img/shadow_img.png">
+	</div>
+	<audio id="audio" loop="loop" src="img/audio.mp3"></audio>
+</body> 
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/teemo.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<!-- <script type="text/javascript" src="js/vconsole.min.js"></script> -->
+<script>
+  	var _mtac = {"senseQuery":1};
+  	(function() {
+  		var mta = document.createElement("script");
+  		mta.src = "http://pingjs.qq.com/h5/stats.js?v2.0.4";
+  		mta.setAttribute("name", "MTAH5");
+  		mta.setAttribute("sid", "500549492");
+  		mta.setAttribute("cid", "500549493");
+  		var s = document.getElementsByTagName("script")[0];
+  		s.parentNode.insertBefore(mta, s);
+  	})();
+</script>
+<script type="text/javascript">
+
+	var imglist = ["img/check1.png", "img/enter.png", "img/load11.png", "img/load12.png", "img/Q1/0.jpg", "img/Q1/1.jpg", "img/Q1/10.jpg", "img/Q1/11.jpg", "img/Q1/12.jpg", "img/Q1/13.jpg", "img/Q1/14.jpg", "img/Q1/15.jpg", "img/Q1/16.jpg", "img/Q1/17.jpg", "img/Q1/18.jpg", "img/Q1/19.jpg", "img/Q1/2.jpg", "img/Q1/20.jpg", "img/Q1/21.jpg", "img/Q1/22.jpg", "img/Q1/23.jpg", "img/Q1/3.jpg", "img/Q1/4.jpg", "img/Q1/5.jpg", "img/Q1/6.jpg", "img/Q1/7.jpg", "img/Q1/8.jpg", "img/Q1/9.jpg", "img/Q2/0.jpg", "img/Q2/1.jpg", "img/Q2/10.jpg", "img/Q2/11.jpg", "img/Q2/12.jpg", "img/Q2/13.jpg", "img/Q2/14.jpg", "img/Q2/15.jpg", "img/Q2/16.jpg", "img/Q2/17.jpg", "img/Q2/18.jpg", "img/Q2/19.jpg", "img/Q2/2.jpg", "img/Q2/20.jpg", "img/Q2/21.jpg", "img/Q2/22.jpg", "img/Q2/23.jpg", "img/Q2/3.jpg", "img/Q2/4.jpg", "img/Q2/5.jpg", "img/Q2/6.jpg", "img/Q2/7.jpg", "img/Q2/8.jpg", "img/Q2/9.jpg", "img/Q3/0.jpg", "img/Q3/1.jpg", "img/Q3/10.jpg", "img/Q3/11.jpg", "img/Q3/12.jpg", "img/Q3/13.jpg", "img/Q3/14.jpg", "img/Q3/15.jpg", "img/Q3/16.jpg", "img/Q3/17.jpg", "img/Q3/18.jpg", "img/Q3/19.jpg", "img/Q3/2.jpg", "img/Q3/20.jpg", "img/Q3/21.jpg", "img/Q3/22.jpg", "img/Q3/23.jpg", "img/Q3/3.jpg", "img/Q3/4.jpg", "img/Q3/5.jpg", "img/Q3/6.jpg", "img/Q3/7.jpg", "img/Q3/8.jpg", "img/Q3/9.jpg", "img/Q4/0.jpg", "img/Q4/1.jpg", "img/Q4/10.jpg", "img/Q4/11.jpg", "img/Q4/12.jpg", "img/Q4/13.jpg", "img/Q4/14.jpg", "img/Q4/15.jpg", "img/Q4/16.jpg", "img/Q4/17.jpg", "img/Q4/18.jpg", "img/Q4/19.jpg", "img/Q4/2.jpg", "img/Q4/20.jpg", "img/Q4/21.jpg", "img/Q4/22.jpg", "img/Q4/23.jpg", "img/Q4/3.jpg", "img/Q4/4.jpg", "img/Q4/5.jpg", "img/Q4/6.jpg", "img/Q4/7.jpg", "img/Q4/8.jpg", "img/Q4/9.jpg"];
+
+	
+	window.onload = function(){
+
+		document.addEventListener("touchmove",function(e){
+			e.preventDefault();
+		},false);
+		
+		$('.submit-img').attr('src',$('.submit-img').attr('rsrc'));
+		$('.last-bg').attr('src',$('.last-bg').attr('rsrc'));
+		$('.btn-jump').attr('src',$('.btn-jump').attr('rsrc'));
+		$('.btn-share').attr('src',$('.btn-share').attr('rsrc'));
+		$('.shade-img').attr('src',$('.shade-img').attr('rsrc'));
+		console.log(Teemo)
+		Teemo.self.setData(imglist);
+		var percent = 0;
+		var percent_before = 0;
+		Teemo.load.on('loading',function(e){
+			percent_before = 0 + Math.floor((e.nowProgress / e.allProgress)*100);
+
+		})
+
+		Teemo.load.on('complete',function(){
+			initImageList();
+		});
+
+		var loadtimer = setInterval(function(){
+
+			if(percent==100){
+
+				audio.play();
+				$('.btn-enter').removeClass('hide');
+				$('.hand-img').removeClass('hide');
+				clearInterval(loadtimer);
+			}
+			if(percent<33){
+				$('.load-2-text1-inner').css('width',719/32*percent+'px');
+			}else if(percent<66){
+				$('.load-2-text2-inner').css('width',627/32*(percent-33)+'px');
+			}else if(percent<99){
+				$('.load-2-text3-inner').css('width',832/32*(percent-66)+'px');
+			}
+			$('.load-text2-inner').css('width',823/100*percent+'px');
+			// console.log(percent)
+			if(percent<percent_before)percent++;
+		},50);
+
+		Teemo.load.start();
+	}
+</script>
+<script type="text/javascript">
+
+	if(GetQueryString('single')=='single'){	
+		$('.type-2').removeClass('hide');		
+	}else{		
+		$('.type-1').removeClass('hide');
+	}
+
+
+	var	wxTitle = "谁是世界上最懂我的人？";
+    var wxLink  = "http://h1.whaledream.com/Campaign/2017/Html5_B_Baidu/index.html";
+    var imgUrl  = "http://h1.whaledream.com/Campaign/2017/Html5_B_Baidu/img/share_icon.jpg";
+    var wxDesc  = "我们似乎一直在独自面对这个复杂的世界";
+
+    if(GetQueryString('single')=='single'){
+    	//单独传播
+	 	wxTitle = "世界上最懂我的人走了";
+		wxLink  = "http://h1.whaledream.com/Campaign/2017/Html5_B_Baidu/index.html?single=single&ADTAG=sg";
+		imgUrl  = "http://h1.whaledream.com/Campaign/2017/Html5_B_Baidu/img/share_icon.jpg";
+		wxDesc  = "ta还会回来吗？";
+		document.title = '别说话，你懂的';
+    }
+    
+    var url = encodeURIComponent(location.href.split('#')[0]);
+
+    $(document).ready(function(){
+    	$.ajax({
+            type : "POST",
+            url : 'http://h2.whaledream.com/GetWX/index.php',
+            dataType : "json",
+            data:"url="+url,
+            async : true,
+            success : function(data){ 
+                wx.config({
+                    debug: false, 
+                    appId: data.appId,
+                    timestamp: data.timestamp,
+                    nonceStr: data.nonceStr,
+                    signature: data.signature,
+                    jsApiList: [
+                        "onMenuShareTimeline",
+                        "onMenuShareAppMessage"
+                        ]
+                });
+                wx.ready(function() {
+                    wx.onMenuShareTimeline({
+                        debug: false, 
+                        title : wxTitle, // 分享标题
+                        link : wxLink, // 分享链接
+                        imgUrl : imgUrl,    // 分享图标
+                        success : function() {
+                            // 用户确认分享后执行的回调函数
+                            MtaH5.clickStat("01");
+                        },
+                        cancel : function() {
+                            // 用户取消分享后执行的回调函数
+                        }
+                    });
+                    wx.onMenuShareAppMessage({
+                        title : wxTitle, // 分享标题
+                        desc : wxDesc, // 分享描述
+                        link : wxLink, // 分享链接
+                        imgUrl : imgUrl, // 分享图标    
+                        success : function() {
+                            // 用户确认分享后执行的回调函数
+                            MtaH5.clickStat("02");
+                        },
+                        cancel : function() {
+                            // 用户取消分享后执行的回调函数
+                        }
+                    });
+                    wx.error(function (res) {
+                     
+                    });
+                });
+            },
+            error:function(res){
+
+            }
+        });
+    });
+</script>
+</html>

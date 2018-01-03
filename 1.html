@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		.square {
+		    width: 80px;
+		    height: 80px;
+		}
+		 
+		.red {
+		    background-color: #F44336;
+		    margin-bottom: 40px;
+		}
+		 
+		.blue {
+		    background-color: #2196F3;
+		    margin-top: 30px;
+		}
+
+		table {
+		    width: 600px;
+		    border: 1px solid #505050;
+		    margin-top: 15px;
+		    color:#505050;
+		    border-collapse:collapse
+		}
+		 
+		td{
+		    border: 1px solid #505050;
+		    padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 网址：http://www.jqhtml.com/ -->
+	<div class="red square"></div>
+	<div class="blue square"></div>
+
+	<table>
+		<thead>
+			<tr>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>性别</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+		</tbody>
+		
+
+	</table>
+
+	<script>
+		var str = 'abcdwefsafgthhanbcarfama';
+		var obj = {};
+		for(var i = 0 ; i < str.length ; i++){
+			if(!obj[str.charAt(i)]){
+				obj[str.charAt(i)] = 1;
+			}else{
+				obj[str.charAt(i)] += 1;
+			}
+		}
+
+		var maxValue = 1;
+		var maxChar = '';
+		for(var k in obj){
+			if(obj[k] > maxValue){
+				maxValue = obj[k];
+				maxChar = k;
+			}
+		}
+
+		console.log(maxChar);
+		console.log(maxValue);
+
+
+		var arr = [1,3,4,5,7,8,1,3,5,2,1,5];
+		var newArr = [];
+		var objArr = {}; 
+
+		for(var j = 0 ; j < arr.length ; j++){
+			if(!objArr[arr[j]]){
+				objArr[arr[j]] = true;
+				newArr.push(arr[j]);
+			}
+		}
+
+		console.log(newArr);
+	</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="mydiv" onclick="doFull()">点击</div>
+
+	<script>
+		
+		function doFull() {
+			console.log(3)
+			var docElm = document.getElementById('mydiv');
+			docElm.webkitRequestFullScreen();
+		}
+	</script>
+</body>
+</html>
