@@ -3,16 +3,82 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style>
+		.block{
+		  background:gray;
+		  height:60px;
+		  width:60px;
+		  position: relative;
+		  border-radius: 10px;
+		}
+		 
+		.block:before{
+		  border-top-right-radius: 10px;
+		  background: white;
+		  position: absolute;
+		  left: 0;
+		  bottom: 0;
+		  content: '';
+		  display: block;
+		  width: 20px;
+		  height: 20px;
+		}
+		 
+		.block:after{
+		  border-bottom-left-radius: 10px;
+		  background: white;
+		  position: absolute;
+		  right: 0;
+		  top: 0;
+		  content: '';
+		  display: block;
+		  width: 20px;
+		  height: 20px;
+		}
+
+		.a {
+			color: red;
+		}
+		.b {
+			color: pink;
+		}
+	</style>
+
 </head>
 <body>
 	<script>
-		var str = '那么，捎带一我，可好';
+		// var str = '那么，捎带一我，可好';
 
-		for (var i = 0 ;i <str.length ;i++) {
-			document.write(str[i] + '<br/>') ;
+		// for (var i = 0 ;i <str.length ;i++) {
+		// 	document.write(str[i] + '<br/>') ;
+		// }
+
+		for (var i = 0; i < 5; i++) {
+			var btn = document.createElement('button');
+			btn.appendChild(document.createTextNode('Button' + i));
+			btn.addEventListener('click', function() {console.log(i)});
+			document.body.appendChild(btn);
 		}
 
+
+		function CreateObj(uName) {
+            this.userName = uName;
+        }
+        CreateObj.prototype.showUserName = function(){
+            return this.userName;
+        }
+        var obj1 = new CreateObj('ghostwu');
+        var obj2 = new CreateObj('卫庄');
+        // console.log( obj1.showUserName === obj2.showUserName ); //true
+        console.log(obj1.showUserName())
+        console.log(obj2.showUserName())
+
 	</script>
+
+	<div class="block">
+		
+	</div>
+	<div class="b a">332</div>
 
 </body>
 </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var arr = [1,2,4,5,1,4,6,2];
+		var obj = {};
+		var newArr = [];
+		var length = arr.length;
+		for(var i = 0; i < length; i++) {
+			if(!obj[arr[i]]) {
+				obj[arr[i]] = true;
+				newArr.push(arr[i])
+			}
+		}
+
+		console.log(newArr)
+
+
+		var a = [...new Set(arr)];
+		console.log(a)
+	</script>
+</body>
+</html>

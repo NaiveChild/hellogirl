@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>弹框</title>
+	<link rel="stylesheet" href="css/sweetalert2.min.css">
+	<style>
+		.btn {
+			width: 40px;
+			height: 20px;
+			background-color: #ccc;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="mybtn" class="btn">
+		点击
+	</div>
+	<script src="js/jQuery-2.1.4.min.js"></script>
+	<script src="js/sweetalert2.min.js"></script>
+
+	<script>
+
+		$(function() {
+			$('#mybtn').click(function() {
+				//swal('hello world');
+
+				// swal('qqqqqq','something went wrong','error');
+
+				// swal({
+				// 	title: 'are you sure',
+				// 	text: 'you will not be able to recoveer this imaginary file',
+				// 	type: 'warning',
+				// 	showCancelButton: true,
+				// 	confirmButtonText: 'yes delete it',
+				// 	cancelButtonText: 'no keep it'
+				// }).then(function(isConfirm) {
+				// 	console.log(isConfirm)
+				// 	if (isConfirm.value === true) {
+				// 		swal('delete','your imaginary file has been delete','success')
+				// 	} else if (isConfirm.dismiss === 'cancel') {
+				// 		swal('cancelled','your imaginary file is safe','error')
+				// 	} else {
+						
+				// 	}
+				// })
+
+
+				swal({
+					title: '你好',
+					html: '<div><p>2222</p><p>2221</p></div>',
+				})
+
+			})
+		})
+
+	</script>
+</body>
+</html>

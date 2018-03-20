@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		body {
+		    background-color: #000;
+		}
+		.hand {
+			position: absolute;
+		    bottom: 0;
+		    left: 46px;
+			width: 52px;
+		    height: 32px;
+		    background: url(hand.png) right center no-repeat;
+			
+			-webkit-animation: hand 2s ease infinite;
+		}
+
+		@keyframes hand {
+			0% {
+				transform: translateX(0) translateZ(0);
+    			opacity: 0;
+			}
+			10% {
+				opacity: 1;
+			}
+			45% {
+				opacity: 1;
+			}
+			50% {
+				transform: translateY(-140px) translateZ(0);
+			}
+			80% {
+				opacity: 0;
+			}
+			100% {
+				transform: translateY(-140px) translateZ(0);
+    			opacity: 0;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="hand move">
+		<div class="bottom_line"></div>
+	</div>
+</body>
+</html>
