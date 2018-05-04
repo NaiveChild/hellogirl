@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.test {
+			width: calc(100% - 100px);
+			height: 20px;
+			background: #ccc;
+			font-size: 12px;
+			transform: scale(0.8);
+		}
+	</style>
+</head>
+<body>
+	<div>https://segmentfault.com/a/1190000009131706</div>
+	<div>https://blog.csdn.net/wdlhao/article/details/79079660</div>
+
+	<div class="test">2222</div>
+	<script>
+		var show1 = function() {
+			console.log(2)
+		}
+
+		console.log(show1)
+
+		function setName(obj){
+		  obj.name = "尼古拉斯·屌·大彬哥"
+		  //重点
+		  obj = new Object();
+		  obj.name = "帅彬"
+		}
+		var Person = new Object();
+		setName(Person);
+		console.log(Person.name);
+
+		var person = {
+	        name:"leo",
+	        show:function(){
+	             this.name = 'leolau'; 
+	             console.log(this);//person对象 object
+	             var bug = function() {
+	             	console.log(this)
+	             }
+	             bug();
+	        }
+		};
+
+		// person.show();
+
+
+		function show(){
+	      var a = 12;
+	      setTimeout(function(){
+	          console.log(a);
+	      },1000);
+		}
+
+		show();
+
+		function add(a,b) {
+			alert(a + b);
+			console.log(this)
+		}
+
+		function sub(a,b) {
+			alert(a - b);
+		}
+
+		// add.call(sub,3,1);
+
+
+		for(var i = 0; i < 5; i++) {
+			setTimeout(function(x) {
+				return function() {
+					console.log(x)
+				}
+			}(i),i*1000)
+		}
+
+		var x = {},
+		y = {key: 'y'},
+		z = {key: 'z'};
+
+		x[y] = 123;
+		x[z] = 456;
+
+		console.log(x[y]);
+		console.log(x)
+
+		var t1,t2
+		function go(t,n){
+			t=n
+		}
+		go(t1,5)
+		go(t2,1055)
+		console.log(t1,t2)
+
+		var name=''
+		function  dosth(a){
+			this.a=25
+		}
+		dosth(name)
+		console.log(name)
+
+
+		var type = 'aaaaaaaaaa';
+		console.log(typeof type);
+		console.log(type instanceof String);
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<div>http://web.jobbole.com/92323/</div>
+	<script>
+		var arr = [1,23,4,5,8,9,13];
+		arr.forEach(function(item) {
+			console.log(item);
+		});
+
+		var arr2 = arr.filter(function(item, index) {
+			return item > 5 || index > 2
+		})
+
+		var arr3 = arr.every(function(item) {
+			return item > 10
+		})
+
+		arr.pop();
+		arr.shift();
+		arr.unshift(3)
+
+		console.log(arr)
+		console.log(arr2)
+		console.log(arr3)
+
+
+		var test = [1,2,3,4,5,4,3,8];
+		var length = test.length;
+		var obj = {};
+		var test2 = [];
+
+		for (var i = 0;i < length;i++) {
+			if (!obj[test[i]]) {
+				test2.push(test[i]);
+				obj[test[i]] = true;
+			}
+		}
+
+		console.log(test2)
+
+
+		var rep = [2,3,4,2,5,6,5,4,2];
+		var len = rep.length;
+		var object = {};
+
+		for (var j = 0;j < len; j++) {
+			if (object[rep[j]]) {
+				object[rep[j]] += 1;
+			} else {
+				object[rep[j]] = 1;
+			}
+		}
+
+		console.log(object)
+
+		var foo = 'aaaaa';
+
+		var myObject = {
+		    foo: "bar",
+		    func: function() {
+		        var self = this;
+		        console.log("outer func:  this.foo = " + this.foo);
+		        console.log("outer func:  self.foo = " + self.foo);
+		        (function() {
+		            console.log("inner func:  this.foo = " + this.foo);
+		            console.log("inner func:  self.foo = " + self.foo);
+		        }());
+	    }
+	};
+	myObject.func();
+
+
+	(function() {
+		var a = b = 3;
+	})();
+
+	console.log(typeof a,'aaa');
+	console.log(b,'bbb');
+
+	function foo2() {
+		return {
+			name: 'jack'
+		}
+	}
+
+	console.log(foo2())
+
+	console.log(typeof NaN);
+	console.log(NaN === NaN);
+
+	function zheng(x) {
+		console.log(x^0)
+		return (x^0) === x;
+	}
+
+	console.log(zheng(3.5));
+
+	function huiwen(str) {
+		str = str.replace(/\W/g, '').toLowerCase();
+		console.log(str)
+	}
+	huiwen('A car, a man, a maraca');
+
+	var array = 'john'.split('');
+	var array2 = array.reverse();
+	var array3 = 'jones'.split('');
+	array2.push(array3);
+
+	console.log(array2);
+
+	</script>
+</body>
+</html>

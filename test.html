@@ -46,6 +46,7 @@
 
 </head>
 <body>
+	<div>this详解 http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html</div>
 	<script>
 		// var str = '那么，捎带一我，可好';
 
@@ -56,7 +57,11 @@
 		for (var i = 0; i < 5; i++) {
 			var btn = document.createElement('button');
 			btn.appendChild(document.createTextNode('Button' + i));
-			btn.addEventListener('click', function() {console.log(i)});
+			btn.addEventListener('click', function(i) {
+				return function() {
+					console.log(i)
+				}
+			}(i));
 			document.body.appendChild(btn);
 		}
 
@@ -70,8 +75,64 @@
         var obj1 = new CreateObj('ghostwu');
         var obj2 = new CreateObj('卫庄');
         // console.log( obj1.showUserName === obj2.showUserName ); //true
-        console.log(obj1.showUserName())
-        console.log(obj2.showUserName())
+        console.log(obj1.showUserName());
+        console.log(obj2.showUserName());
+
+
+        function commafy(num) {
+			return num && num
+				.toString()
+				.replace(/(\d)(?=(\d{3})+\.)/g, function($1, $2){
+					console.log($1,'s1')
+					console.log($2,'s2')
+					return $2 + ',';
+				})
+		}
+
+		var num = commafy(12222.6);
+		console.log(num);
+
+		var x = 3;
+		window.onload = function() {
+			var x = 1;
+			function test(){
+				this.x = 0;
+				console.log(this)
+		　　}
+			test();
+			alert(x); 
+		}
+
+		console.log(this.x)
+
+		console.log(x,'999999999999')
+	// 	var x = 1;
+	// 	function test(){
+	// 　　　　this.x = 0;
+	// 　　}
+	// 　　test();
+	// 　　alert(x); 
+
+
+// 	var x = 2;
+// 　　function test(){
+// 　　　　this.x = 1;
+// 　　}
+// 　　var o = new test();
+// 	alert(o.x);
+// 　　alert(x); //2
+
+	// var x = 2;
+	// function test() {
+	// 　this.x = 1;
+	// }
+	// var o = new test();
+	// alert("o.x: " + o.x); //1
+	// o.x = 3;
+	// test();//x = 1
+	// x*=10;// x = 10
+	// 　　alert("o.x: " + o.x); // 3
+	// alert("x: " + x); // 10
 
 	</script>
 

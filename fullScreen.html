@@ -3,9 +3,46 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style>
+		ul li {
+			position: relative;
+			float: left;
+			padding: 4px;
+			list-style: none;
+			cursor: pointer;
+		}
+
+		li::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 100%;
+			width: 0;
+			height: 100%;
+			border-bottom: 2px solid #000;
+			transition: 0.2s all linear;
+		}
+
+		li:hover::before {
+			width: 100%;
+			left: 0;
+		}
+		li:hover ~ li::before {
+			left: 0;
+		}
+
+	
+	</style>
 </head>
 <body>
 	<div id="mydiv" onclick="doFull()">点击</div>
+
+	<ul>
+		<li>不可思议的</li>
+		<li>导航栏</li>
+		<li>光标下划线跟随</li>
+		<li>css</li>
+	</ul>
 
 	<script>
 		
